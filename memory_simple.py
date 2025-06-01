@@ -7,14 +7,6 @@ memory = ConversationBufferMemory(
     return_messages=True
 )
 
-# Example of adding a message to memory
-memory.chat_memory.add_user_message("Hello!")
-memory.chat_memory.add_ai_message("Hi there! How can I help you today?")
-
-# Retrieve the chat history
-chat_history = memory.load_memory_variables({})
-print("Chat History:", chat_history)
-
 # Initialize the model and tokenizer
 model = AutoModelForCausalLM.from_pretrained(
     "microsoft/Phi-3-mini-4k-instruct",
